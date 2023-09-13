@@ -8,6 +8,8 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  GlobalKey<FormState> key = GlobalKey();
+  // LoginRequestData loginData = LoginRequestData();
   bool validate = false;
   bool obscureText = false;
 
@@ -17,7 +19,7 @@ class _LoginViewState extends State<LoginView> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('TEXT'),
+        // title: const Text('TEXT'),
         elevation: 0,
         backgroundColor: Colors.black,
         leading: IconButton(
@@ -31,32 +33,34 @@ class _LoginViewState extends State<LoginView> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          child: SizedBox(
+          child: Container(
+            margin: const EdgeInsets.all(20.0),
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Column(
-                  children: [
-                    const Text(
-                      "TEXT",
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Text(
-                      "TEXT TEXT TEXT TEXT TEXT",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey[700],
-                      ),
-                    ),
-                    const SizedBox(height: 30),
-                  ],
+                const Text(
+                  "LOGIN",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
+                const SizedBox(height: 20),
+                Text(
+                  "TELA DE LOGIN SIMPLES ",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.grey[700],
+                  ),
+                ),
+                const Icon(
+                  Icons.person,
+                  color: Colors.black,
+                  size: 100.0,
+                ),
+                const SizedBox(height: 50),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Column(
@@ -106,8 +110,8 @@ class _LoginViewState extends State<LoginView> {
                                   ? Icons.visibility
                                   : Icons.visibility_off,
                               semanticLabel: obscureText
-                                  ? 'show password'
-                                  : 'hide password',
+                                  ? 'Mostrar senha'
+                                  : 'Esconder senha',
                             ),
                           ),
                         ),
@@ -116,12 +120,33 @@ class _LoginViewState extends State<LoginView> {
                     ],
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: (() {}),
-                  child: const Text('TEXT'),
+                Container(
+                  height: 50,
+                  padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                  child: ElevatedButton(
+                      child: const Text('Login'), onPressed: () {}),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('Não possui uma conta?'),
+                    TextButton(
+                      child: const Text(
+                        'Sign in',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Recuperar Senha',
+                  ),
                 ),
                 const SizedBox(height: 20),
-                const Text("TEXT TEXT TEXT TEXT TEXT"),
+                const Text("João Henrique - LOGIN VIEW - 2023"),
               ],
             ),
           ),
