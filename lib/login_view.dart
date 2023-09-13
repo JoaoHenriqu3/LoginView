@@ -38,8 +38,8 @@ class _LoginViewState extends State<LoginView> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                const SizedBox(height: 20),
                 const Text(
                   "LOGIN",
                   style: TextStyle(
@@ -55,12 +55,13 @@ class _LoginViewState extends State<LoginView> {
                     color: Colors.grey[700],
                   ),
                 ),
+                const SizedBox(height: 20),
                 const Icon(
                   Icons.person,
                   color: Colors.black,
                   size: 100.0,
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Column(
@@ -120,12 +121,9 @@ class _LoginViewState extends State<LoginView> {
                     ],
                   ),
                 ),
-                Container(
-                  height: 50,
-                  padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                  child: ElevatedButton(
-                      child: const Text('Login'), onPressed: () {}),
-                ),
+                const SizedBox(height: 20),
+                ElevatedButton(child: const Text('Login'), onPressed: () {}),
+                const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -133,12 +131,13 @@ class _LoginViewState extends State<LoginView> {
                     TextButton(
                       child: const Text(
                         'Sign in',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 15),
                       ),
                       onPressed: () {},
                     ),
                   ],
                 ),
+                const SizedBox(height: 8),
                 TextButton(
                   onPressed: () {},
                   child: const Text(
@@ -146,7 +145,12 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                const Text("João Henrique - LOGIN VIEW - 2023"),
+                RichText(
+                  text: const TextSpan(
+                    style: TextStyle(color: Colors.black),
+                    text: ("João Henrique - LOGIN VIEW - 2023"),
+                  ),
+                ),
               ],
             ),
           ),
